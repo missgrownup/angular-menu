@@ -8,7 +8,7 @@
 	</head>
 	<body ng-controller="menuController as menuCtrl">
 		<div ng-controller="orderController as orderCtrl">
-			<div class="container" ng-controller="navController as nav">
+			<div class="menu" ng-controller="navController as nav">
 				<!-- Menu section -->
 				<ul class="nav-tab">
 					<li ng-repeat="menuCategory in menuCtrl.menu"><a href="#" ng-click="nav.selectTab(menuCategory.category)" ng-class="{active:nav.isSelect(menuCategory.category)}">{{menuCategory.category}}</a></li>
@@ -30,14 +30,14 @@
 									<option value="">--select qty--</option>
 									<option ng-repeat="i in qtyCtrl.getNumber(dish.amount) track by $index">{{$index + 1}}</option>
 								</select>
-								<button class="add-btn" ng-click="orderCtrl.addOrder(dish, qtyCtrl.number); qtyCtrl.reset()">Add</button>
+								<button class="add-btn" ng-click="orderCtrl.addOrder(dish, qtyCtrl.number);  qtyCtrl.reset()">Add</button>
 							</div>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<!-- Order section -->
-			<div>
+			<div class="order">
 				<table border="1">
 					<caption>Your Order</caption>
 					<tr>
@@ -48,14 +48,18 @@
 					</tr>
 					<tr ng-repeat="order in orderCtrl.order">
 						<td>{{order[0].name}}</td>
-						<td>{{order[1]}}</td>
+						<td class="orderQty">
+							{{order[1]}}
+							<a class="addOne" ng-click="orderCtrl.addOrder(order[0], 1)"></a>
+							<a class="reduceOne" ng-click="orderCtrl.reduceOrder(order[0], 1)"></a>
+						</td>
 						<td ng-if="order[0].discount">{{order[1]*order[0].price*order[0].discount/100 | currency}}</td>
 						<td ng-if="!order[0].discount">{{order[1]*order[0].price | currency}}</td>
-						<td><a href="#" ng-click="orderCtrl.removeOrder(order[0], order[1])">Remove</a>{{order[1]}}</td>
+						<td><a class="remove-btn" ng-click="orderCtrl.reduceOrder(order[0], order[1])">Remove</a></td>
 					</tr>
 					<tr>
 						<td colspan="2">Total</td>
-						<td>{{orderCtrl.sum | currency}}</td>
+						<td colspan="2">{{orderCtrl.sum | currency}}</td>
 					</tr>
 				</table>
 			</div>

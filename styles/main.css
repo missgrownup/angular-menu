@@ -1,8 +1,9 @@
 body {
   font-family: Roboto,sans-serif,Times,"Times New Roman"; }
 
-.container {
-  max-width: 800px; }
+.menu {
+  width: 800px;
+  float: left; }
 
 .nav-tab {
   text-align: center; }
@@ -48,13 +49,51 @@ body {
   .category-list .add-btn {
     margin-top: 20px; }
 
+.order {
+  float: left;
+  padding: 70px 0 0 50px;
+  max-width: 520px; }
+
 table {
   border-collapse: collapse;
   border: 1px solid black; }
   table caption {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-size: 24px; }
   table td {
     border: 1px solid black;
-    padding: 8px 30px; }
+    padding: 8px 30px;
+    text-align: center;
+    position: relative; }
+
+.addOne, .reduceOne {
+  cursor: pointer;
+  position: absolute; }
+  .addOne:after, .reduceOne:after {
+    content: " ";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-top: 2px solid black;
+    border-right: 2px solid black; }
+
+.addOne {
+  top: 50%;
+  right: 20px;
+  margin-top: -8px; }
+  .addOne:after {
+    transform: rotate(-45deg); }
+
+.reduceOne {
+  top: 50%;
+  right: 20px;
+  margin-top: -2px; }
+  .reduceOne:after {
+    transform: rotate(135deg); }
+
+.remove-btn {
+  color: #2cb267 !important;
+  text-decoration: underline;
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

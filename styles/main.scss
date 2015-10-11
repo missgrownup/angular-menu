@@ -2,8 +2,9 @@ body {
 	font-family: Roboto,sans-serif,Times,"Times New Roman";
 }
 
-.container {
-	max-width: 800px;
+.menu {
+	width: 800px;
+	float: left;
 }
 
 .nav-tab {
@@ -74,18 +75,67 @@ body {
 	}
 }
 
+.order {
+	float: left;
+	padding: 70px 0 0 50px;
+	max-width: 520px;
+}
+
 table {
 	border-collapse: collapse;
 	border: 1px solid black;
 
 	caption {
 		margin-bottom: 10px;
+		font-size: 24px;
 	}
 
 	td {
 		border: 1px solid black;
 		padding: 8px 30px;
+		text-align: center;
+		position: relative;
 	}
+}
+
+.addOne, .reduceOne {
+	cursor: pointer;
+	position: absolute;
+
+	&:after {
+		content: " ";
+		display: block;
+		height: 6px;
+		width: 6px;
+		border-top: 2px solid black;
+		border-right: 2px solid black;
+	}
+}
+
+.addOne {
+	top: 50%;
+	right: 20px;
+	margin-top: -8px;
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+
+.reduceOne {
+	top: 50%;
+	right: 20px;
+	margin-top: -2px;
+
+	&:after {
+		transform: rotate(135deg);
+	}
+}
+
+.remove-btn {
+	color: #2cb267 !important;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 
