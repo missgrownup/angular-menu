@@ -6,12 +6,14 @@
 				//"category": "pot",
 				"name": "hot & spicy",
 				"price": 5.8,
+				"image": "hot-spicy",
 				"amount": 99
 			},
 			{
 				//"category": "pot",
 				"name": "gourmet",
 				"price": 12.8,
+				"image": "gourmet",
 				"amount": 99
 			},
 			{
@@ -19,18 +21,21 @@
 				"name": "ying yang (two flavor pot)",
 				"price": 13.8,
 				"discount": 70,
+				"image": "ying-yang",
 				"amount": 99
 			},
 			{
 				//"category": "pot",
 				"name": "golden goose",
 				"price": 22.8,
+				"image": "goose",
 				"amount": 99
 			},
 			{
 				//"category": "pot",
 				"name": "Hong Kong congee",
 				"price": 15.8,
+				"image": "hong-kong",
 				"amount": 99
 			}
 		]
@@ -42,61 +47,71 @@
 				//"category": "vegetable",
 				"name": "lettuce",
 				"price": 5.8,
+				"image": "lettuce",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "potato",
 				"price": 4.8,
+				"image": "potato",
 				"amount": 99
 			},
 			{
 				//"category": "chinese cabbage",
-				"name": "lettuce",
+				"name": "chinese cabbage",
 				"price": 5.5,
 				"discount": 70,
+				"image": "cabbage",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "spinach",
 				"price": 3.8,
+				"image": "spinach",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "white gourd",
 				"price": 6.6,
+				"image": "white-gourd",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "sweet potato",
 				"price": 5,
+				"image": "sweet-potato",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "toufu",
 				"price": 4.8,
+				"image": "toufu",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "frozen toufu",
 				"price": 5.8,
+				"image": "frozen-toufu",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "crowndaisy",
 				"price": 4.5,
+				"image": "crowndaisy",
 				"amount": 99
 			},
 			{
 				//"category": "vegetable",
 				"name": "coriander",
 				"price": 6.8,
+				"image": "coriander",
 				"amount": 99
 			}
 		]
@@ -109,36 +124,42 @@
 				"name": "sliced lamb",
 				"price": 8.8,
 				"discount": 90,
+				"image": "sliced-lamb",
 				"amount": 99
 			},
 			{
 				//"category": "meat",
 				"name": "sliced beef",
 				"price": 8.8,
+				"image": "sliced-beef",
 				"amount": 99
 			},
 			{
 				//"category": "meat",
 				"name": "sliced chicken",
 				"price": 7.8,
+				"image": "sliced-chicken",
 				"amount": 99
 			},
 			{
 				//"category": "meat",
 				"name": "spicy chicken wings",
 				"price": 7,
+				"image": "chicken-wings",
 				"amount": 99
 			},
 			{
 				//"category": "meat",
 				"name": "lamb kidney",
 				"price": 8.5,
+				"image": "lamb-kidney",
 				"amount": 99
 			},
 			{
 				//"category": "meat",
 				"name": "sweetbread",
 				"price": 8.5,
+				"image": "sweetbread",
 				"amount": 99
 			}
 		]
@@ -148,32 +169,30 @@
 		"dishList": [
 			{
 				//"category": "fungus",
-				"name": "Pleurotus eryngii",
+				"name": "pleurotus eryngii",
 				"price": 4.5,
+				"image": "pleurotus-eryngii",
 				"amount": 99
 			},
 			{
 				//"category": "fungus",
 				"name": "shiitakes",
 				"price": 3.5,
+				"image": "shiitakes",
 				"amount": 99
 			},
 			{
 				//"category": "fungus",
-				"name": "Penoki",
+				"name": "penoki",
 				"price": 3.5,
+				"image": "penoki",
 				"amount": 99
 			},
 			{
 				//"category": "fungus",
 				"name": "kelp",
 				"price": 4.5,
-				"amount": 99
-			},
-			{
-				//"category": "fungus",
-				"name": "Coprinus",
-				"price": 4.5,
+				"image": "kelp",
 				"amount": 99
 			}
 		]
@@ -185,30 +204,35 @@
 				//"category": "seafood",
 				"name": "prawn",
 				"price": 10.8,
+				"image": "prawn",
 				"amount": 99
 			},
 			{
 				//"category": "seafood",
 				"name": "crab",
 				"price": 13.5,
+				"image": "crab",
 				"amount": 99
 			},
 			{
 				//"category": "seafood",
 				"name": "prawn ball",
 				"price": 13.8,
+				"image": "prawn-ball",
 				"amount": 99
 			},
 			{
 				//"category": "seafood",
 				"name": "crab stick",
 				"price": 7.8,
+				"image": "crab-stick",
 				"amount": 99
 			},
 			{
 				//"category": "seafood",
 				"name": "yellow croaker",
 				"price": 12,
+				"image": "yellow-croaker",
 				"amount": 99
 			},
 			{
@@ -216,6 +240,7 @@
 				"name": "fish ball",
 				"price": 6.5,
 				"discount": 85,
+				"image": "fish-ball",
 				"amount": 99
 			}
 		]

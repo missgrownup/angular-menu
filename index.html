@@ -7,15 +7,57 @@
 		<link href="./styles/main.css" rel="stylesheet">
 	</head>
 	<body ng-controller="menuController as menuCtrl">
-		<div ng-controller="navController as nav">
-			<ul class="menu-tab">
-				<li ng-repeat="menuCategory in menuCtrl.menu"><a href="#" ng-click="nav.selectTab(menuCategory.category)">{{menuCategory.category}}</a></li>
-			</ul>
-			{{nav.tab}}
-			<div>
-				<ul ng-repeat="menuCategory in menuCtrl.menu" ng-show="nav.isSelect(menuCategory.category)">
-					<li ng-repeat="dishList in menuCategory.dishList">{{dishList.name}}</li>
+		<div ng-controller="orderController as orderCtrl">
+			<div class="container" ng-controller="navController as nav">
+				<!-- Menu section -->
+				<ul class="nav-tab">
+					<li ng-repeat="menuCategory in menuCtrl.menu"><a href="#" ng-click="nav.selectTab(menuCategory.category)" ng-class="{active:nav.isSelect(menuCategory.category)}">{{menuCategory.category}}</a></li>
 				</ul>
+				<div>
+					<ul class="category-list" ng-repeat="menuCategory in menuCtrl.menu" ng-show="nav.isSelect(menuCategory.category)">
+						<li ng-repeat="dish in menuCategory.dishList" ng-hide="dish.amount <= 0">
+							<img ng-src="./images/{{dish.image}}" width="130" height="100" />
+							<h3>{{dish.name}}</h3>
+							<div ng-show="dish.discount">
+								<span class="price-before">Before: {{dish.price | currency}}</span>
+								<span class="price-now">Now: {{dish.price * dish.discount / 100 | currency}}</span>
+							</div>
+							<div ng-hide="dish.discount">
+								<span class="price">Price: {{dish.price | currency}}</span>
+							</div>
+							<div ng-controller="qtyController as qtyCtrl">
+								<select ng-model="qtyCtrl.number">
+									<option value="">--select qty--</option>
+									<option ng-repeat="i in qtyCtrl.getNumber(dish.amount) track by $index">{{$index + 1}}</option>
+								</select>
+								<button class="add-btn" ng-click="orderCtrl.addOrder(dish, qtyCtrl.number); qtyCtrl.reset()">Add</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Order section -->
+			<div>
+				<table border="1">
+					<caption>Your Order</caption>
+					<tr>
+						<td>Name</td>
+						<td>Qty</td>
+						<td>Price</td>
+						<td></td>
+					</tr>
+					<tr ng-repeat="order in orderCtrl.order">
+						<td>{{order[0].name}}</td>
+						<td>{{order[1]}}</td>
+						<td ng-if="order[0].discount">{{order[1]*order[0].price*order[0].discount/100 | currency}}</td>
+						<td ng-if="!order[0].discount">{{order[1]*order[0].price | currency}}</td>
+						<td><a href="#" ng-click="orderCtrl.removeOrder(order[0], order[1])">Remove</a>{{order[1]}}</td>
+					</tr>
+					<tr>
+						<td colspan="2">Total</td>
+						<td>{{orderCtrl.sum | currency}}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</body>
